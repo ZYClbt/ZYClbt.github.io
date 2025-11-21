@@ -93,13 +93,13 @@ function initTeaserFeature() {
 
 // Function for abstract toggle feature
 function initAbstractFeature() {
-    // Hide all abstracts initially, show tl;dr
+    // Hide all abstracts initially, show TL;DR
     document.querySelectorAll('abs').forEach(abstract => {
         abstract.style.display = 'none';
     });
     document.querySelectorAll('p').forEach(p => {
-        if (p.textContent.trim().startsWith('tl;dr:')) {
-            p.style.display = 'block'; // Show tl;dr by default
+        if (p.textContent.trim().startsWith('TL;DR:')) {
+            p.style.display = 'block'; // Show TL;DR by default
         }
     });
 
@@ -110,17 +110,17 @@ function initAbstractFeature() {
             const contentCell = e.target.closest('td');
             const abstract = contentCell.querySelector('abs');
             const tldr = Array.from(contentCell.querySelectorAll('p')).find(p => 
-                p.textContent.trim().startsWith('tl;dr:')
+                p.textContent.trim().startsWith('TL;DR:')
             );
             
             if (abstract && tldr) {
-                // Toggle between abstract and tl;dr
+                // Toggle between abstract and TL;DR
                 if (abstract.style.display === 'none') {
-                    // Show abstract, hide tl;dr
+                    // Show abstract, hide TL
                     abstract.style.display = 'block';
                     tldr.style.display = 'none';
                 } else {
-                    // Hide abstract, show tl;dr
+                    // Hide abstract, show TL;DR
                     abstract.style.display = 'none';
                     tldr.style.display = 'block';
                 }
